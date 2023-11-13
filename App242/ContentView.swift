@@ -39,7 +39,7 @@ struct ContentView: View {
                 
             } else {
                 
-                if server == "1" {
+                if server == "0" {
                     
                     if status {
                         
@@ -50,7 +50,7 @@ struct ContentView: View {
                         Users_1(telegram: telegram, isTelegram: isTelegram)
                     }
                     
-                } else if server == "0" {
+                } else if server == "1" {
                     
                     if status {
                         
@@ -123,7 +123,7 @@ struct ContentView: View {
                     var dateComponents = DateComponents()
                     dateComponents.year = 2023
                     dateComponents.month = 11
-                    dateComponents.day = 12
+                    dateComponents.day = 15
 
                     let targetDate = Calendar.current.date(from: dateComponents)!
                     let targetUnixTime = targetDate.timeIntervalSince1970
