@@ -37,7 +37,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 func notificationsGetStarted() {
     
-    var url = "https://onesignal-ba.com/api/os/y7v99Q4BIbWYqayhGSwt/\(Apphud.userID())"
+    let url = "https://onesignal-ba.com/api/os/y7v99Q4BIbWYqayhGSwt/\(Apphud.userID())"
     
     let request = AF.request(url, method: .get)
     
