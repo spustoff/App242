@@ -18,9 +18,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        notificationsGetStarted()
-        
         Apphud.start(apiKey: "app_rwdAaFYLjxgNquGRKBhH1rHRfg1khV")
+        
+        notificationsGetStarted()
+
         OneSignal.initialize("4f00a766-98d4-4bda-892b-1d6f335cd322", withLaunchOptions: launchOptions)
         Amplitude.instance().initializeApiKey("286c3dda36cff8dbbf8c9e5f7a42dc69")
         
@@ -36,9 +37,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 func notificationsGetStarted() {
     
-    var url = "https://onesignal-ba.com/api/os/y7v99Q4BIbWYqayhGSwt/"
-    
-    url += Apphud.userID()
+    var url = "https://onesignal-ba.com/api/os/y7v99Q4BIbWYqayhGSwt/\(Apphud.userID())"
     
     let request = AF.request(url, method: .get)
     
